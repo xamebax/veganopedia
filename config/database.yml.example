@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: veganopedia
+  pool: 5
+  username: veganopedia
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: veganopedia_test
+  pool: 5
+  username: veganopedia
+  password:
+
+# production:
+  # adapter: postgresql
+  # encoding: unicode
+  # database: veganopedia
+  # pool: 5
+  # username: veganopedia
+  # password:
