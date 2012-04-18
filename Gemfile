@@ -7,6 +7,8 @@ gem "jquery-rails"
 gem 'omniauth'
 gem 'pg'
 gem 'rails', '3.2.3'
+gem 'simple_form'
+gem 'tabletastic'
 
 group :development, :test do
   gem "capybara"
