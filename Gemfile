@@ -4,12 +4,11 @@ gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
+gem 'navigasmic'
 gem 'omniauth'
 gem 'pg'
 gem 'rails', '3.2.3'
 gem 'simple_form'
-gem 'simple-navigation'
-gem 'simple-navigation-bootstrap'
 gem 'tabletastic'
 
 group :development, :test do
