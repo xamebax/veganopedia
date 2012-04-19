@@ -9,7 +9,8 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
-    = render_navigation :expand_all => true, :renderer => :bootstrap
+    .navigation
+      = render_navigation #:expand_all => true, :renderer => Bootstrap
     %p.notice= notice
     %p.alert= alert
     .container

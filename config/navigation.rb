@@ -61,7 +61,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
     primary.item :users, 'Users', users_path
-    primary.item :my_profile, "My profile", user_path(current_user)
+    primary.item :my_profile, "My profile", user_path(current_user), :if => Proc.new { user_signed_in? }
     primary.item :log_in, 'Log in', new_user_session_path
     primary.item :log_out, 'Log out', destroy_user_session_path, :method => :delete
 
