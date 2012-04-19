@@ -10,7 +10,13 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
     .navigation
-      = render_navigation #:expand_all => true, :renderer => Bootstrap
+      - semantic_navigation :main, :html => { :class => 'nav nav-tabs' } do |n|
+        -# = n.group 'Media' do
+        = n.item 'Users', :link => users_path
+        = n.item "My profile", :link => user_path(current_user) if user_signed_in?
+        = n.item 'Log in', :link => new_user_session_path
+        = n.item 'Log out', :link => { :controller => 'devise/sessions', :action => 'destroy' }#, :method => :delete
+      -# = render_navigation #:expand_all => true, :renderer => Bootstrap
     %p.notice= notice
     %p.alert= alert
     .container
