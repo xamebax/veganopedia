@@ -16,6 +16,7 @@ group :development, :test do
   gem "capybara"
   gem "factory_girl_rails"
   gem "rspec-rails", ">= 2.0.1"
+  gem "ruby-debug19", :require => "ruby-debug"
 end
 
 group :assets do
