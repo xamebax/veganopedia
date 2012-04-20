@@ -6,5 +6,5 @@ Veganopedia::Application.routes.draw do
   devise_scope :user do
     root :to => 'users#index'
   end
-  resources :users, :only => [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :users, :only => [:index, :show, :edit, :update, :destroy]
 end

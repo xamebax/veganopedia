@@ -9,27 +9,21 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  def new
-    @user = User.new
-    respond_with @user
-  end
-
-  def create
-
-  end
-
   def edit
     @user = User.find(params[:id])
     respond_with @user
   end
 
   def update
-
-    redirect_to users_path, :notice => 'Successfully deleted user.'
+    @user = User.find(params[:id])
+    @user.update_attributes!(params[:user])
+    redirect_to users_path, :notice => 'Successfully updated user.'
+  rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e
+    render :action => :edit
   end
 
   def destroy
-    User.find(params[:id])
+    User.find(params[:id]).destroy
     redirect_to users_path, :notice => 'Successfully deleted user.'
   end
 end
