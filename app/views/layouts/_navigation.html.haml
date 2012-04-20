@@ -1,10 +1,10 @@
 .navigation
   - semantic_navigation :main, :html => { :class => 'nav nav-tabs' } do |n|
     -# = n.group 'Media' do
-    = n.item 'Users', :link => users_path, :highlight_on => ['/users']
+    = n.item 'Users', :link => users_path, :highlight_on => ['/users'], :html => { :class => 'nav pull-left' }
     - if user_signed_in?
-      = n.item "My profile", :link => user_path(current_user) if user_signed_in?
-      = n.item 'Sign out', :link => { :controller => 'devise/sessions', :action => 'destroy' }#, :method => :delete
+      = n.item "My profile", :link => user_path(current_user), :html => { :class => 'nav pull-left' } if user_signed_in?
+      = n.item 'Sign out', :link => { :controller => 'devise/sessions', :action => 'destroy' }, :html => { :class => 'nav pull-right' }#, :method => :delete
     - else
-      = n.item 'Sign in', :link => new_user_session_path, :highlight_on => ['/sign_in']
-      = n.item 'Sign up', :link => new_user_registration_path, :highlight_on => ['/sign_up']
+      = n.item 'Sign in', :link => new_user_session_path, :highlight_on => ['/sign_in'], :html => { :class => 'nav pull-right' }
+      = n.item 'Sign up', :link => new_user_registration_path, :highlight_on => ['/sign_up'], :html => { :class => 'nav pull-right' }
