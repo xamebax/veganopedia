@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/jejacks0n/navigasmic.git
+  revision: 28b18a66ad0aedcf0582df317612d6021e78858b
+  specs:
+    navigasmic (0.5.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -90,7 +96,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.2.0)
-    navigasmic (0.5.6)
     nokogiri (1.5.2)
     omniauth (1.0.3)
       hashie (~> 1.2)
@@ -187,7 +192,7 @@ DEPENDENCIES
   haml (>= 3.0.0)
   haml-rails
   jquery-rails
-  navigasmic
+  navigasmic!
   omniauth
   pg
   rails (= 3.2.3)

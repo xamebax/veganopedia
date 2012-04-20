@@ -4,7 +4,7 @@ gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
-gem 'navigasmic'
+gem 'navigasmic', :git => 'git://github.com/jejacks0n/navigasmic.git'
 gem 'omniauth'
 gem 'pg'
 gem 'rails', '3.2.3'
