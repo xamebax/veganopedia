@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem "devise"
+gem "formtastic"
+gem 'formtastic-bootstrap'
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
@@ -8,7 +10,6 @@ gem 'navigasmic', :git => 'git://github.com/jejacks0n/navigasmic.git'
 gem 'omniauth'
 gem 'pg'
 gem 'rails', '3.2.3'
-gem 'simple_form'
 gem 'tabletastic'
 
 group :development, :test do
