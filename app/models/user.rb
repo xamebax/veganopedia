@@ -14,11 +14,6 @@ class User < ActiveRecord::Base
     :presence => true,
     :uniqueness => true
 
-  validates :password,
-    :presence => true,
-    :length => { :minimum => 7 }
-
-
   # methods defined below are used in sign in mechanism based on login or email
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
