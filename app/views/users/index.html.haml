@@ -2,7 +2,7 @@
 %h1=t '.title', :default => model_class.model_name.human.pluralize
 %table.table.table-striped
 = table_for @users do |t|
-  = t.data :actions => :all, :html => { :class => 'table.table-striped' } do
+  = t.data :actions => [:show, :edit], :html => { :class => 'table.table-striped' } do
     = t.cell :username
     = t.cell :email
     = t.cell :created_at
