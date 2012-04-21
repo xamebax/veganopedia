@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409224231) do
+ActiveRecord::Schema.define(:version => 20120421223243) do
+
+  create_table "genders", :force => true do |t|
+    t.string "name", :limit => 32, :default => "", :null => false
+  end
+
+  add_index "genders", ["id"], :name => "index_genders_on_id", :unique => true
+  add_index "genders", ["name"], :name => "index_genders_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
