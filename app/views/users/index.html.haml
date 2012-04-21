@@ -3,6 +3,7 @@
 %table.table.table-striped
 = table_for @users do |t|
   = t.data :actions => [:show, :edit], :html => { :class => 'table.table-striped' } do
+    = t.cell(:avatar) { |u| gravatar_image_tag(u.email, :alt => 'Avatar')}
     = t.cell :username
     = t.cell :email
     = t.cell :created_at
