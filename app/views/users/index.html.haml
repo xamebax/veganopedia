@@ -2,8 +2,9 @@
 %h1=t '.title', :default => model_class.model_name.human.pluralize
 %table.table.table-striped
 = table_for @users do |t|
-  = t.data :actions => [:show, :edit], :html => { :class => 'table.table-striped' } do
+  = t.data :html => { :class => 'table.table-striped' } do
     = t.cell(:avatar) { |u| gravatar_image_tag(u.email, :alt => 'Avatar')}
-    = t.cell :username
+    = t.cell(:username) { |u| link_to(u.username, user_path(u)) }
     = t.cell :email
     = t.cell :created_at
+    -# = t.cell("") { |u| link_to("Edit", edit_user_registration_path) if current_user and u == current_user }
