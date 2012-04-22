@@ -6,5 +6,7 @@
     = t.cell(:avatar) { |u| gravatar_image_tag(u.email, :alt => 'Avatar')}
     = t.cell(:username) { |u| link_to(u.username, user_path(u)) }
     = t.cell :email
+    = t.cell :gender
+    = t.cell :location
     = t.cell :created_at
     -# = t.cell("") { |u| link_to("Edit", edit_user_registration_path) if current_user and u == current_user }
