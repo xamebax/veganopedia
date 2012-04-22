@@ -10,6 +10,7 @@ gem "haml-rails"
 gem "jquery-rails"
 gem 'navigasmic', :git => 'git://github.com/jejacks0n/navigasmic.git'
 gem 'omniauth'
+gem "paperclip"
 gem 'pg'
 gem 'rails', '3.2.3'
 gem 'tabletastic'
