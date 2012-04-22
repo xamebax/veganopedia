@@ -38,4 +38,24 @@ describe User do
   it 'should be valid with proper data' do
     FactoryGirl.build(:user).should be_valid
   end
+
+  it 'should be valid without gender' do
+    FactoryGirl.build(:user, :gender => nil).should be_valid
+  end
+
+  it 'should be valid with gender' do
+    FactoryGirl.build(:user, :gender => FactoryGirl.create(:gender)).should be_valid
+  end
+
+  it 'should be valid without location' do
+    FactoryGirl.build(:user, :location => nil).should be_valid
+  end
+
+  it 'should be valid with location' do
+    FactoryGirl.build(:user, :location => 'Warsaw').should be_valid
+  end
+
+  it 'should be invalid with too long location' do
+    FactoryGirl.build(:user, :location => 'a' * 65).should_not be_valid
+  end
 end

@@ -2,8 +2,10 @@ class User < ActiveRecord::Base
   devise :confirmable, :database_authenticatable, :omniauthable,
          :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :gender_id, :gender, :location
   attr_accessor :login
+
+  belongs_to :gender
 
   validates :username,
     :presence => true,
@@ -13,6 +15,9 @@ class User < ActiveRecord::Base
   validates :email,
     :presence => true,
     :uniqueness => true
+
+  validates :location,
+    :length => { :maximum => 64 }
 
   # methods defined below are used in sign in mechanism based on login or email
   def self.find_for_database_authentication(warden_conditions)

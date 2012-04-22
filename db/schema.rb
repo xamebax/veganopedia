@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120421223243) do
+ActiveRecord::Schema.define(:version => 20120422072730) do
 
   create_table "genders", :force => true do |t|
     t.string "name", :limit => 32, :default => "", :null => false
@@ -39,12 +39,17 @@ ActiveRecord::Schema.define(:version => 20120421223243) do
     t.string   "username",               :limit => 16, :default => "", :null => false
     t.datetime "created_at",                                           :null => false
     t.datetime "updated_at",                                           :null => false
+    t.string   "location"
+    t.integer  "gender_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["gender_id"], :name => "index_users_on_gender_id"
   add_index "users", ["id"], :name => "index_users_on_id", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username"
+
+  add_foreign_key "users", "genders", :name => "users_gender_id_fk"
 
 end
