@@ -17,11 +17,9 @@ gem 'tabletastic'
 
 group :development, :test do
   gem "capybara"
+  gem "debugger"
   gem "factory_girl_rails"
-  gem "linecache19", :git => 'git://github.com/mark-moseley/linecache'
   gem "rspec-rails", ">= 2.0.1"
-  gem "ruby-debug-base19x", '~> 0.11.30.pre4'
-  gem "ruby-debug19"#, :require => "ruby-debug"
 end
 
 group :assets do
