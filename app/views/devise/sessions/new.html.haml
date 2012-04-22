@@ -1,16 +1,15 @@
 %h2 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :login
-    %br/
-    = f.text_field :login
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
+
+= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :login, hint:"Enter your username or email"
+    = f.input :password, hint:"Enter password"
+  -if devise_mapping.rememberable?
+    .clearfix
       = f.label :remember_me
-  %div= f.submit "Sign in"
-= render "links"
+      .input
+        = f.check_box :remember_me
+  = f.actions(:submit, :button_html => {:class => "primary"})
+
+= render :partial => "devise/shared/links"
