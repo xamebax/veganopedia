@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   devise :confirmable, :database_authenticatable, :omniauthable,
          :registerable, :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :products
+
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :gender_id, :gender, :location
   attr_accessor :login
 

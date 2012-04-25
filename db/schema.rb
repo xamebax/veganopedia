@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422072730) do
+ActiveRecord::Schema.define(:version => 20120425194445) do
 
   create_table "genders", :force => true do |t|
     t.string "name", :limit => 32, :default => "", :null => false
@@ -19,6 +19,25 @@ ActiveRecord::Schema.define(:version => 20120422072730) do
 
   add_index "genders", ["id"], :name => "index_genders_on_id", :unique => true
   add_index "genders", ["name"], :name => "index_genders_on_name", :unique => true
+
+  create_table "products", :force => true do |t|
+    t.string   "name",               :limit => 128,                               :default => "", :null => false
+    t.string   "company",            :limit => 128,                               :default => ""
+    t.string   "shops",              :limit => 256,                               :default => ""
+    t.text     "ingriedients",                                                    :default => ""
+    t.integer  "user_id",                                                                         :null => false
+    t.decimal  "price",                             :precision => 8, :scale => 2
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",                                                                      :null => false
+    t.datetime "updated_at",                                                                      :null => false
+  end
+
+  add_index "products", ["company"], :name => "index_products_on_company"
+  add_index "products", ["name"], :name => "index_products_on_name"
+  add_index "products", ["user_id"], :name => "index_products_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
@@ -49,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20120422072730) do
   add_index "users", ["id"], :name => "index_users_on_id", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username"
+
+  add_foreign_key "products", "users", :name => "products_user_id_fk"
 
   add_foreign_key "users", "genders", :name => "users_gender_id_fk"
 
