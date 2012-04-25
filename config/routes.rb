@@ -7,4 +7,5 @@ Veganopedia::Application.routes.draw do
     root :to => 'users#index'
   end
   resources :users, :only => [:index, :show, :edit, :update, :destroy]
+  resources :products, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
 end

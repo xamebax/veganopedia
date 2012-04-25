@@ -1,0 +1,10 @@
+- model_class = Product.new.class
+%h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+= table_for @products do |t|
+  = t.data do
+    = t.cell(:name)
+    = t.cell(:company)
+    = t.cell(:shops)
+    = t.cell(:ingriedients)
+    = t.cell(:price)
