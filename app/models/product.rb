@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :user
+  has_many :comments
   attr_accessible :company, :ingriedients, :name, :price, :shops, :user_id, :user
 
   before_validation :set_user, :on => :create

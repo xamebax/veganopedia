@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   devise :confirmable, :database_authenticatable, :omniauthable,
          :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :products
+  has_many :products#, :comments
 
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :gender_id, :gender, :location, :login
   attr_accessor :login
