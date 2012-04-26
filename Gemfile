@@ -13,6 +13,7 @@ gem 'omniauth'
 gem "paperclip"
 gem 'pg'
 gem 'rails', '3.2.3'
+gem 'sentient_user'
 gem 'tabletastic'
 
 group :development, :test do
