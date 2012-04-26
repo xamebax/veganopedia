@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Product do
+  before do
+    FactoryGirl.create(:user).make_current
+  end
+
   it "should be valid with valid data" do
     FactoryGirl.create(:product).should be_valid
   end
@@ -54,8 +58,8 @@ describe Product do
     FactoryGirl.build(:product, :ingriedients => '').should be_valid
   end
 
-  it "should be invalid without user" do
-    FactoryGirl.build(:product, :user => nil).should_not be_valid
+  it "should set user in before validation vallback" do
+    FactoryGirl.build(:product, :user => nil).should be_valid
   end
 
   it "should be valid without price" do

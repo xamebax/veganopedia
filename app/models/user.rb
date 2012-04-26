@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include SentientUser
   devise :confirmable, :database_authenticatable, :omniauthable,
          :registerable, :recoverable, :rememberable, :trackable, :validatable
 
