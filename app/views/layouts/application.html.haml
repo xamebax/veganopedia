@@ -12,6 +12,6 @@
     .container
       = render :partial => 'layouts/navigation'
       .span9.offset1
-        - if current_user
-          = render :partial => 'layouts/flash', :locals => { :flash => flash }
+        -# - if current_user
+        = render :partial => 'layouts/flash', :locals => { :flash => flash }
         = yield
