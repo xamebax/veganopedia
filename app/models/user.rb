@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :products
 
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :gender_id, :gender, :location
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :gender_id, :gender, :location, :login
   attr_accessor :login
 
   belongs_to :gender
