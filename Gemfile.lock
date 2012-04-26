@@ -8,12 +8,6 @@ GIT
       rails (>= 3.1.0)
 
 GIT
-  remote: git://github.com/jejacks0n/navigasmic.git
-  revision: 28b18a66ad0aedcf0582df317612d6021e78858b
-  specs:
-    navigasmic (0.5.6)
-
-GIT
   remote: git://github.com/justinfrench/formtastic.git
   revision: 7b7428fa4a6a44aea1e8278523f4f45f2570a33d
   branch: 2.1-stable
@@ -128,6 +122,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.3.2)
+    navigasmic (0.5.6)
     nokogiri (1.5.2)
     omniauth (1.1.0)
       hashie (~> 1.2)
@@ -234,7 +229,7 @@ DEPENDENCIES
   haml (>= 3.0.0)
   haml-rails
   jquery-rails
-  navigasmic!
+  navigasmic
   omniauth
   paperclip
   pg
