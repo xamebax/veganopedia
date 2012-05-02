@@ -1,6 +1,10 @@
 .navigation
   - semantic_navigation :main, :html => { :class => 'nav nav-tabs' } do |n|
     -# = n.group 'Media' do
+    = n.item "Products", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
+      %ul.dropdown-menu.nav.nav-tabs
+        = n.item "All products", :link => products_path
+        = n.item "Add new product", :link => new_product_path
     = n.item 'Users', :link => users_path, :highlight_on => ['/users'], :html => { :class => 'pull-left' }
     - if user_signed_in?
       = n.item "Profile", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => 'dropdown' }, :html => { :class => 'dropdown' } do
