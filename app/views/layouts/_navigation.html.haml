@@ -1,11 +1,13 @@
 .navigation
   - semantic_navigation :main, :html => { :class => 'nav nav-tabs' } do |n|
     -# = n.group 'Media' do
-    = n.item 'Users', :link => users_path, :highlight_on => ['/users'], :html => { :class => 'nav pull-left' }
+    = n.item 'Users', :link => users_path, :highlight_on => ['/users'], :html => { :class => 'pull-left' }
     - if user_signed_in?
-      = n.item "My profile", :link => user_path(current_user), :html => { :class => 'nav pull-left' }
-      = n.item "Edit my profile", :link => edit_user_registration_path, :html => { :class => 'nav pull-left' }
-      = n.item 'Sign out', :link => { :controller => 'devise/sessions', :action => 'destroy' }, :html => { :class => 'nav pull-right' }#, :method => :delete
+      = n.item "Profile", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => 'dropdown' }, :html => { :class => 'dropdown' } do
+        %ul.dropdown-menu.nav.nav-tabs
+          = n.item "My profile", :link => user_path(current_user), :html => { :class => 'pull-left' }
+          = n.item "Edit my profile", :link => edit_user_registration_path, :html => { :class => 'pull-left' }
+          = n.item 'Sign out', :link => { :controller => 'devise/sessions', :action => 'destroy' }, :html => { :class => 'pull-right' }#, :method => :delete
     - else
-      = n.item 'Sign in', :link => new_user_session_path, :highlight_on => ['/sign_in'], :html => { :class => 'nav pull-right' }
-      = n.item 'Sign up', :link => new_user_registration_path, :highlight_on => ['/sign_up'], :html => { :class => 'nav pull-right' }
+      = n.item 'Sign in', :link => new_user_session_path, :highlight_on => ['/sign_in'], :html => { :class => 'pull-right' }
+      = n.item 'Sign up', :link => new_user_registration_path, :highlight_on => ['/sign_up'], :html => { :class => 'pull-right' }
