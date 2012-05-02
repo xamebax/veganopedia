@@ -1,6 +1,5 @@
 class Product < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
 
   has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   attr_accessible :company, :ingriedients, :name, :price, :shops, :user_id, :user

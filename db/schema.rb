@@ -11,18 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426215003) do
-
-  create_table "comments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "comments", ["product_id"], :name => "index_comments_on_product_id"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+ActiveRecord::Schema.define(:version => 20120425194445) do
 
   create_table "genders", :force => true do |t|
     t.string "name", :limit => 32, :default => "", :null => false
@@ -79,9 +68,6 @@ ActiveRecord::Schema.define(:version => 20120426215003) do
   add_index "users", ["id"], :name => "index_users_on_id", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username"
-
-  add_foreign_key "comments", "products", :name => "comments_product_id_fk"
-  add_foreign_key "comments", "users", :name => "comments_user_id_fk"
 
   add_foreign_key "products", "users", :name => "products_user_id_fk"
 
