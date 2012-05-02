@@ -65,4 +65,6 @@ describe Product do
   it "should be valid without price" do
     FactoryGirl.build(:product, :price => nil).should be_valid
   end
+
+  it_should_behave_like :opinio_subjectum
 end

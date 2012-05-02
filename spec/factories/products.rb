@@ -6,7 +6,7 @@ FactoryGirl.define do
     company "Vegan ACME"
     shops "Vegan store"
     ingriedients "Oil, flour, salt"
-    user nil #{ FactoryGirl.create :user }
+    user #{ FactoryGirl.create :user }
     price "9.99"
   end
 end

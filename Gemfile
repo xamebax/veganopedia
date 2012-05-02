@@ -8,8 +8,10 @@ gem "gravatar_image_tag"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
+gem "kaminari"
 gem 'navigasmic'#, :git => 'git://github.com/jejacks0n/navigasmic.git'
 gem 'omniauth'
+gem "opinio"
 gem "paperclip"
 gem 'pg'
 gem 'rails', '3.2.3'

@@ -38,4 +38,9 @@ class ProductsController < ApplicationController
     Product.find(params[:id]).destroy
     redirect_to products_path, :notice => 'Successfully deleted product.'
   end
+
+  comment_destroy_conditions do |comment|
+    # false
+    comment.owner == current_user
+  end
 end
