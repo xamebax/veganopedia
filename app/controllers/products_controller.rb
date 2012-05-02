@@ -6,8 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @comment = Comment.new
-    respond_with @product, @comment
+    respond_with @product
   end
 
   def new

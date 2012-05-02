@@ -28,11 +28,6 @@
   %strong= 'Added by:'
   = @product.user.username
 
-%h2= 'Add a comment:'
-=semantic_form_for [@product, @comment] do |f|
-  =f.inputs :body
-  =f.actions :submit
-
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), products_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_product_path(@product), :class => 'btn'
