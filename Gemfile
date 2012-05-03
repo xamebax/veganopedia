@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "bullet"
 gem "devise"
 gem "foreigner"
 gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => '2.1-stable'
