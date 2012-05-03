@@ -17,7 +17,9 @@ gem "opinio"
 gem "paperclip"
 gem 'pg'
 gem 'rails', '3.2.3'
+gem "ransack"
 gem 'sentient_user'
+gem "squeel"
 gem 'tabletastic'
 gem "therubyracer"
 
