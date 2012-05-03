@@ -1,6 +1,12 @@
 .navigation
   - semantic_navigation :main, :html => { :class => 'nav nav-tabs' } do |n|
     -# = n.group 'Media' do
+    = n.item "Veganopedia", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
+      %ul.dropdown-menu.nav.nav-tabs
+        = n.item "Terms of service", :link => page_path('terms-of-service')
+        = n.item "Our definition of veganism", :link => page_path('definition')
+        = n.item "About us", :link => page_path('about')
+
     = n.item "Products", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
       %ul.dropdown-menu.nav.nav-tabs
         = n.item "All products", :link => products_path

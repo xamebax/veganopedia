@@ -7,6 +7,7 @@ gem 'formtastic-bootstrap', :git => 'git://github.com/cgunther/formtastic-bootst
 gem "gravatar_image_tag"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
+gem "high_voltage"
 gem "jquery-rails"
 gem "kaminari"
 gem 'navigasmic'#, :git => 'git://github.com/jejacks0n/navigasmic.git'
