@@ -15,8 +15,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create!(params[:product])
-    redirect_to products_path, :notice => "Successfully created product."
+    @product = Product.new(params[:product])
+    @product.save!
+    redirect_to products_path, :notice => successfully_created(@product)
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e
     render :action => :new
   end
@@ -29,14 +30,15 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update_attributes!(params[:product])
-    redirect_to products_path, :notice => 'Successfully updated product.'
+    redirect_to products_path, :notice => successfully_updated(@product)
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e
     render :action => :edit
   end
 
   def destroy
-    Product.find(params[:id]).destroy
-    redirect_to products_path, :notice => 'Successfully deleted product.'
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path, :notice => successfully_destroyed(@product)
   end
 
   comment_destroy_conditions do |comment|

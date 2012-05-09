@@ -17,13 +17,14 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes!(params[:user])
-    redirect_to users_path, :notice => 'Successfully updated user.'
+    redirect_to users_path, :notice => successfully_updated(@user)
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e
     render :action => :edit
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    redirect_to users_path, :notice => 'Successfully deleted user.'
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path, :notice => successfully_destroyed(@user)
   end
 end

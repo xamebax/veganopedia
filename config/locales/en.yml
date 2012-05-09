@@ -1,5 +1,11 @@
 en:
-  hello: "Hello world"
+  successfully_created: Successfully added a new %{name}
+  successfully_updated: Successfully updated %{name}
+  successfully_destroyed: Successfully deleted %{name}
+
+  cancel_link_confirmation: Are you sure? All changes will be lost.
+  disable_form_with: Please wait...
+  are_you_sure: Are you sure?
 
   activerecord:
     attributes:
