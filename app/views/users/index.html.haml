@@ -1,9 +1,8 @@
-- model_class = User.new.class
-%h1=t '.title', :default => model_class.model_name.human.pluralize
+%h1= t('users.users')
 %table.table.table-striped
 = table_for @users do |t|
   = t.data :html => { :class => 'table.table-striped' } do
-    = t.cell(:avatar) { |u| gravatar_image_tag(u.email, :alt => 'Avatar')}
+    = t.cell(:avatar) { |u| gravatar_image_tag(u.email, :alt => t('users.avatar'))}
     = t.cell(:username) { |u| link_to(u.username, user_path(u)) }
     = t.cell :email
     = t.cell :gender

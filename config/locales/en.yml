@@ -17,6 +17,13 @@ en:
     products: Products!
     products_downcase: products
 
+  users:
+    user: User
+    user_downcase: user
+    users: Users
+    users_downcase: users
+    avatar: Avatar
+
   nav:
     veganopedia:
       veganopedia: Veganopedia
@@ -47,4 +54,10 @@ en:
         ingriedients: Ingriedients
         price: Price
       user:
-        login: "Username or email"
+        login: Username or email
+        avatar: Avatar
+        username: Username
+        email: Email
+        gender: Gender
+        location: Location
+        created_at: Created at
