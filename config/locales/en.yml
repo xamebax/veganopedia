@@ -7,6 +7,16 @@ en:
   disable_form_with: Please wait...
   are_you_sure: Are you sure?
 
+  helpers:
+    titles:
+      new: New %{model}
+
+  products:
+    product: Product
+    product_downcase: product
+    products: Products!
+    products_downcase: products
+
   nav:
     veganopedia:
       veganopedia: Veganopedia
@@ -30,5 +40,11 @@ en:
 
   activerecord:
     attributes:
+      product:
+        name: Name
+        company: Company
+        shops: shops
+        ingriedients: Ingriedients
+        price: Price
       user:
         login: "Username or email"
