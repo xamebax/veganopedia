@@ -1,23 +1,23 @@
 .navigation
   - semantic_navigation :main, :html => { :class => 'nav nav-tabs' } do |n|
     -# = n.group 'Media' do
-    = n.item "Veganopedia", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
+    = n.item t('nav.veganopedia.veganopedia'), :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
       %ul.dropdown-menu.nav.nav-tabs
-        = n.item "Terms of service", :link => page_path('terms-of-service')
-        = n.item "Our definition of veganism", :link => page_path('definition')
-        = n.item "About us", :link => page_path('about')
+        = n.item t('nav.veganopedia.terms'), :link => page_path('terms-of-service')
+        = n.item t('nav.veganopedia.definition'), :link => page_path('definition')
+        = n.item t('nav.veganopedia.about'), :link => page_path('about')
 
-    = n.item "Products", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
+    = n.item t('nav.products.products'), :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => "dropdown" }, :html => { :class => 'dropdown' } do
       %ul.dropdown-menu.nav.nav-tabs
-        = n.item "All products", :link => products_path
-        = n.item "Add new product", :link => new_product_path
-    = n.item 'Users', :link => users_path, :highlight_on => ['/users'], :html => { :class => 'pull-left' }
+        = n.item t('nav.products.all_products'), :link => products_path
+        = n.item t('nav.products.new_product'), :link => new_product_path
+    = n.item t('nav.users.users'), :link => users_path, :highlight_on => ['/users'], :html => { :class => 'pull-left' }
     - if user_signed_in?
-      = n.item "Profile", :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => 'dropdown' }, :html => { :class => 'dropdown' } do
+      = n.item t('nav.users.profile'), :link => '#', :link_html => { :class => 'dropdown-toggle', "data-toggle" => 'dropdown' }, :html => { :class => 'dropdown' } do
         %ul.dropdown-menu.nav.nav-tabs
-          = n.item "My profile", :link => user_path(current_user), :html => { :class => 'pull-left' }
-          = n.item "Edit my profile", :link => edit_user_registration_path, :html => { :class => 'pull-left' }
-          = n.item 'Sign out', :link => { :controller => 'devise/sessions', :action => 'destroy' }, :html => { :class => 'pull-right' }#, :method => :delete
+          = n.item t('nav.users.my_profile'), :link => user_path(current_user), :html => { :class => 'pull-left' }
+          = n.item t('nav.users.edit_my_profile'), :link => edit_user_registration_path, :html => { :class => 'pull-left' }
+          = n.item t('nav.sign.out'), :link => { :controller => 'devise/sessions', :action => 'destroy' }, :html => { :class => 'pull-right' }#, :method => :delete
     - else
-      = n.item 'Sign in', :link => new_user_session_path, :highlight_on => ['/sign_in'], :html => { :class => 'pull-right' }
-      = n.item 'Sign up', :link => new_user_registration_path, :highlight_on => ['/sign_up'], :html => { :class => 'pull-right' }
+      = n.item t('nav.sign.in'), :link => new_user_session_path, :highlight_on => ['/sign_in'], :html => { :class => 'pull-right' }
+      = n.item t('nav.sign.up'), :link => new_user_registration_path, :highlight_on => ['/sign_up'], :html => { :class => 'pull-right' }

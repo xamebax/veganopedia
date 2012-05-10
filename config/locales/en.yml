@@ -7,6 +7,27 @@ en:
   disable_form_with: Please wait...
   are_you_sure: Are you sure?
 
+  nav:
+    veganopedia:
+      veganopedia: Veganopedia
+      terms: Terms of service
+      definition: Out definition of veganism
+      about: About us
+    products:
+      products: Products
+      all_products: All products
+      new_product: Add a new product
+    users:
+      users: Users
+      profile: Profile
+      my_profile: My profile
+      edit_my_profile: Edit my profile
+    sign:
+      up: Sign up
+      in: Sign in
+      out: Sign out
+
+
   activerecord:
     attributes:
       user:
