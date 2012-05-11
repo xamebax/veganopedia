@@ -7,7 +7,7 @@ Veganopedia::Application.routes.draw do
     root :to => 'users#index'
     get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
   end
-  resources :users, :only => [:index, :show, :edit, :update, :destroy]
+  resources :users, :only => [:index, :show]
   resources :products, :only => [:index, :show, :new, :create, :edit, :update, :destroy] do
     opinio
   end

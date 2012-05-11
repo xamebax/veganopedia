@@ -10,6 +10,11 @@ en:
   helpers:
     titles:
       new: New %{model}
+    links:
+      back: Back
+      edit: Edit
+      confirm: Confirm
+
 
   products:
     product: Product
